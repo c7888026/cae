@@ -276,7 +276,10 @@ class Job:
                 f_name, f_extension = os.path.splitext(f_name)
                 vtu_path = self.dir + '/paraview/' + f_name + '.pvd'
             elif len(file_list) == 1:
-                vtu_path = self.path + '.vtu'
+                #vtu_path = self.path + '.vtu'
+                f_name, f_extension = os.path.splitext(f)
+                f_name, f_extension = os.path.splitext(f_name)
+                vtu_path = self.dir + '/paraview/' + f_name + '.vtu'
             else:
                 logging.error('VTU file not found.\nExport VTU results first.')
                 return
